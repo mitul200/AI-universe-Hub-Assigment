@@ -22,7 +22,7 @@ const diaplaylodeData =(data)=>{
               <p class=" m-0 p-0 card-text">2.${features[1]}</p>
               <p class=" m-0 p-0 card-text">3.${features[3]}</p>
               <hr>
-              <div class="d-flex justify-content-between aling-items- baseline">
+              <div class="d-flex justify-content-between aling-items- center">
               <div>
               <h5>Google Bard</h5>
               <div class="d-flex aling-items-center ">
@@ -30,7 +30,7 @@ const diaplaylodeData =(data)=>{
               <p class="m-0 p-0">${published_in}</p>
               </div>
               </div>
-              <i class="fa-solid fa-arrow-right" onclick="modalLodeByData('${id}')"></i>
+              <i class="fa-solid fa-arrow-right" onclick="modalLodeByData('${id}')" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
               </div>
             </div>
         </div>
@@ -50,4 +50,26 @@ const modalLodeByData =(elementId)=>{
 
 const modalDisplayLodeData=(data)=>{
 console.log(data)
+
+ const parents = document.getElementById('modal-bodys')
+ const creatDiv = document.createElement('div')
+ const {features,image,name,published_in,id}=data
+ creatDiv.classList.add('col','d-flex' ,"gap-2")
+ creatDiv.innerHTML=`
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+ `
+ parents.appendChild(creatDiv)
 }
