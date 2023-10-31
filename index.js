@@ -44,6 +44,10 @@ const modalLodeByData =(elementId)=>{
     const url =`https://openapi.programming-hero.com/api/ai/tool/${elementId}`
     fetch(url)
     .then(res=>res.json())
-    .then(data=>console.log(data))
+    .then(data=>modalDisplayLodeData(data.data))
     
+}
+
+const modalDisplayLodeData=(data)=>{
+console.log(data)
 }
