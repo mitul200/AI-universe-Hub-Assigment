@@ -1,8 +1,12 @@
 const lodeData =()=>{
+    document.getElementById('spinners').classList.remove('d-none')
     const url ='https://openapi.programming-hero.com/api/ai/tools'
     fetch(url)
     .then(res=>res.json())
-    .then(data=>diaplaylodeData(data.data))
+    .then(data=>{
+        document.getElementById('spinners').classList.add('d-none')
+        diaplaylodeData(data.data)
+    })
 }
 
 const diaplaylodeData =(data)=>{
@@ -12,7 +16,7 @@ const diaplaylodeData =(data)=>{
         const parents =document.getElementById('parents-container')
         const creatDiv = document.createElement('div')
         creatDiv.classList.add('col')
-        const {features,image,name,published_in,id}=element
+        const {features,image,published_in,id}=element
         creatDiv.innerHTML=`
         <div class="card w-48">
             <img src="${image ? image:'https://youchat.com/assets/images/screenshot-1.png'}" class="card-img-top" alt="...">
