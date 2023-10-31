@@ -15,10 +15,25 @@ const diaplaylodeData =(data)=>{
         const {features,image,name,published_in}=element
         creatDiv.innerHTML=`
         <div class="card w-48">
-            <img src="${image ? image :"https://randomuser.me/api/portraits/thumb/men/75.jpg"}" class="card-img-top" alt="...">
+            <img src="${image ? image:'http://clipart-library.com/newimages/clip-art-books-15.png'}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <h5 class="card-title">Features</h5>
+              <p class=" m-0 p-0 card-text">1.${features[0]}</p>
+              <p class=" m-0 p-0 card-text">2.${features[1]}</p>
+              <p class=" m-0 p-0 card-text">3.${features[3]}</p>
+              <hr>
+              <div class="d-flex justify-itmes-center">
+              <div>
+              <h5>Google Bard</h5>
+              <div>
+              <i class="fa-regular fa-calendar-days"></i>
+              <p>${published_in}</p>
+              </div>
+
+              </div>
+              <div></div>
+              <div></div>
+              </div>
             </div>
         </div>
         `
