@@ -1,17 +1,18 @@
 const lodeData =()=>{
+  document.getElementById('btn-id').classList.remove('d-none')
     document.getElementById('spinners').classList.remove('d-none')
     const url ='https://openapi.programming-hero.com/api/ai/tools'
     fetch(url)
     .then(res=>res.json())
     .then(data=>{
         document.getElementById('spinners').classList.add('d-none')
-        diaplaylodeData(data.data)
+        diaplaylodeData(data.data.tools.slice(0,6))
     })
 }
 
 const diaplaylodeData =(data)=>{
     console.log(data)
-    data.tools.forEach(element => {
+    data.forEach(element => {
         console.log(element)
         const parents =document.getElementById('parents-container')
         const creatDiv = document.createElement('div')
@@ -93,4 +94,18 @@ console.log(data.pricing[0].price)
     </div>
  `
  parents.appendChild(creatDiv)
+}
+
+
+const showMore =()=>{
+  document.getElementById('spinners').classList.remove('d-none')
+  
+  const url ='https://openapi.programming-hero.com/api/ai/tools'
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>{
+      document.getElementById('btn-id').classList.add('d-none')
+        document.getElementById('spinners').classList.add('d-none')
+        diaplaylodeData(data.data.tools)
+    })
 }
